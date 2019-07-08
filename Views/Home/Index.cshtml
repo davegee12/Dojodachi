@@ -1,0 +1,16 @@
+﻿<h1 style="text-align: center;">Dojodachi</h1>
+<h2 style="text-align: center;">Fullness: @ViewBag.Fullness Happiness: @ViewBag.Happiness Meals: @ViewBag.Meals Energy: @ViewBag.Energy</h2>
+@{
+    if (@ViewBag.Fullness >= 100 && @ViewBag.Happiness >= 100 && @ViewBag.Energy >= 100)
+    {
+        <partial name="WinPartial"></partial>
+    }
+    else if (@ViewBag.Fullness <= 0 || @ViewBag.Happiness <= 0)
+    {
+        <partial name="LosePartial"></partial>
+    }
+    else
+    {
+        <partial name="GamePartial"></partial>
+    }
+}
